@@ -21,7 +21,7 @@
     "prisma:migrate:down": "npx prisma migrate reset --force",
     "prisma:migrate:reset": "npx prisma migrate reset --force",
     "prisma:seed": "npx prisma db seed",
-    "postinstall": "node -e \"if (process.env.NODE_ENV !== 'development') { require('child_process').execSync('npx prisma generate', { stdio: 'inherit' }); }\""
+    "postinstall": "npx prisma generate"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",

@@ -6,14 +6,11 @@ WORKDIR /app
 # Copy only package.json and yarn.lock for caching dependencies
 COPY package*.json yarn.lock ./
 
-# Install dependencies
-RUN yarn install --frozen-lockfile
-
 # Copy Prisma schema
 COPY prisma ./prisma
 
-# Generate Prisma client
-RUN npx prisma generate
+# Install dependencies
+RUN yarn install --frozen-lockfile
 
 # Copy all the code after the dependencies have been installed
 COPY . .
