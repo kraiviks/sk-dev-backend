@@ -4,7 +4,7 @@
   "author": "Serhii Kostiv <kostiv.serhii@gmail.com>",
   "private": true,
   "scripts": {
-    "build": "npx prisma generate && nest build",
+    "build": "npx prisma generate && npx prisma migrate deploy && nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",

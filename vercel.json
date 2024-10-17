@@ -13,8 +13,5 @@
       "dest": "src/main.ts",
       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
     }
-  ],
-  "hooks": {
-    "post-deploy": "npx prisma migrate deploy"
-  }
-} 
+  ]
+}
