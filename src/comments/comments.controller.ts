@@ -11,6 +11,7 @@ import {
 import { CommentsService } from './comments.service';
 import { GetUserId } from '../users/decorators/userId.decorator';
 import { AuthGuard } from '../auth/auth.guard';
+import { CreateCommentDto } from './dto/createComment.dto';
 
 @Controller('comments')
 export class CommentsController {
@@ -21,12 +22,13 @@ export class CommentsController {
   async createComment(
     @Param('articleId') articleId: string,
     @GetUserId('id') currentUserId: string,
-    @Body('content') content: string,
+    @Body() createCommentDto: CreateCommentDto,
   ) {
     return this.commentsService.createComment(
       articleId,
       currentUserId,
-      content,
+      createCommentDto.content,
+      createCommentDto.parentId,
     );
   }
 
