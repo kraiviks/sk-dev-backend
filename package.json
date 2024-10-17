@@ -4,7 +4,7 @@
   "author": "Serhii Kostiv <kostiv.serhii@gmail.com>",
   "private": true,
   "scripts": {
-    "build": "npx prisma generate && npx prisma migrate deploy && nest build",
+    "build": "npx prisma generate && nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -21,7 +21,7 @@
     "prisma:migrate:down": "npx prisma migrate reset --force",
     "prisma:migrate:reset": "npx prisma migrate reset --force",
     "prisma:seed": "npx prisma db seed",
-    "postinstall": "npx prisma generate"
+    "postinstall": "npx prisma generate && npm run prisma:migrate:up"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
