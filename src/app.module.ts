@@ -6,7 +6,6 @@ import { ArticlesModule } from './articles/articles.module';
 import { CommentsModule } from './comments/comments.module';
 import { LikesModule } from './likes/likes.module';
 import { FollowsModule } from './follows/follows.module';
-import { ImageController } from './image/image.controller';
 
 @Module({
   imports: [
@@ -17,7 +16,6 @@ import { ImageController } from './image/image.controller';
     LikesModule,
     FollowsModule,
   ],
-  controllers: [ImageController],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
